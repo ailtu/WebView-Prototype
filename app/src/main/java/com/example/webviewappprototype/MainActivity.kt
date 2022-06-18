@@ -13,20 +13,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // load the web page
-        val mWebView = findViewById<View>(R.id.WebView) as WebView
-        mWebView.loadUrl("https://www.kabum.com.br")
+        val findWV = findViewById<View>(R.id.WebView) as WebView
+        findWV.loadUrl("https://github.com/zeld4coffee") // load the web page
 
-        val webSettings = mWebView.settings
+        val webSettings = findWV.settings
         webSettings.javaScriptEnabled = true
-        mWebView.webViewClient = WebViewClient()
+        findWV.webViewClient = WebViewClient()
 
-        mWebView.canGoBack()
-        mWebView.setOnKeyListener(View.OnKeyListener { view, i, keyEvent ->
+        findWV.canGoBack()
+        findWV.setOnKeyListener(View.OnKeyListener { view, i, keyEvent ->
             if (i == KeyEvent.KEYCODE_BACK
                 && keyEvent.action == MotionEvent.ACTION_UP
-                && mWebView.canGoBack()) {
-                mWebView.goBack()
+                && findWV.canGoBack()
+            ) {
+                findWV.goBack()
                 return@OnKeyListener true
             }
             false
