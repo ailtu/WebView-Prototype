@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val findWV = findViewById<View>(R.id.WebView) as WebView
         findWV.loadUrl("https://github.com/zeld4coffee") // load the web page
 
-        // val webSettings = findWV.settings
+         val webSettings = findWV.settings
         // webSettings.javaScriptEnabled = true
 
         findWV.webViewClient = WebViewClient()
