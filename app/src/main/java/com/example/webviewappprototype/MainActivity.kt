@@ -14,12 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val findWV = findViewById<View>(R.id.WebView) as WebView
-        findWV.loadUrl("https://github.com/zeld4coffee") // load the web page
-        findWV.webViewClient = WebViewClient()
+        findWV.loadUrl("https://www.urbanovitalino.com.br/") // load the web page
+        val webSett = findWV.settings
+        webSett.javaScriptEnabled = true // enable javascript
+        findWV.webViewClient = WebViewClient() // manage page navigation
+        webSett.domStorageEnabled = true // storage data for optimization
 
-        // key steps
         findWV.canGoBack()
-        findWV.setOnKeyListener(View.OnKeyListener { view, i, keyEvent ->
+        findWV.setOnKeyListener(View.OnKeyListener { _, i, keyEvent ->
             if (i == KeyEvent.KEYCODE_BACK
                 && keyEvent.action == MotionEvent.ACTION_UP
                 && findWV.canGoBack()
