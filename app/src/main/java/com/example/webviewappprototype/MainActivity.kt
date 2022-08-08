@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val findWV = findViewById<View>(R.id.WebView) as WebView
-        findWV.loadUrl("https://www.urbanovitalino.com.br/") // load the web page
+        findWV.loadUrl("your website url") // load the web page
         val webSett = findWV.settings
         webSett.javaScriptEnabled = true // enable javascript
         findWV.webViewClient = WebViewClient() // manage page navigation
